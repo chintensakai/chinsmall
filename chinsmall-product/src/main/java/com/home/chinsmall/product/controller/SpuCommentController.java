@@ -34,7 +34,7 @@ public class SpuCommentController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:spucomment:list")
+//    @RequiresPermissions("product:spucomment:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuCommentService.queryPage(params);
 

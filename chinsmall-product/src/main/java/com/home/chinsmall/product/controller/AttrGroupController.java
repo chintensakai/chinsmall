@@ -34,7 +34,7 @@ public class AttrGroupController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:attrgroup:list")
+//    @RequiresPermissions("product:attrgroup:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrGroupService.queryPage(params);
 

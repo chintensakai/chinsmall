@@ -34,7 +34,7 @@ public class CommentReplayController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:commentreplay:list")
+//    @RequiresPermissions("product:commentreplay:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = commentReplayService.queryPage(params);
 

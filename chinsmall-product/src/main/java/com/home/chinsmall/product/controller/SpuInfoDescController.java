@@ -34,7 +34,7 @@ public class SpuInfoDescController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:spuinfodesc:list")
+//    @RequiresPermissions("product:spuinfodesc:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuInfoDescService.queryPage(params);
 

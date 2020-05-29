@@ -34,7 +34,7 @@ public class ProductAttrValueController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:productattrvalue:list")
+//    @RequiresPermissions("product:productattrvalue:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = productAttrValueService.queryPage(params);
 

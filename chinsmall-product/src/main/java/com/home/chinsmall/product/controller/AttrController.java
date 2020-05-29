@@ -34,7 +34,7 @@ public class AttrController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:attr:list")
+//    @RequiresPermissions("product:attr:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrService.queryPage(params);
 
