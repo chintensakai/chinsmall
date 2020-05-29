@@ -15,7 +15,9 @@
 		<module>chinsmall-order</module>
 		<module>chinsmall-product</module>
 		<module>chinsmall-ware</module>
+		<module>chinsmall-common</module>
 		<module>renren-fast</module>
+		<module>renren-generator</module>
 	</modules>
 
 </project>
