@@ -1,12 +1,14 @@
 package com.home.chinsmall.member.controller;
 
 import com.home.chinsmall.member.entity.UmsMemberEntity;
+import com.home.chinsmall.member.feign.CouponFeignService;
 import com.home.chinsmall.member.service.UmsMemberService;
 import com.home.common.utils.PageUtils;
 import com.home.common.utils.R;
 import java.util.Arrays;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,18 @@ public class UmsMemberController {
 
   @Autowired
   private UmsMemberService umsMemberService;
+
+  @Autowired
+  private CouponFeignService couponFeignService;
+
+  @GetMapping("/coupons")
+  public R test() {
+    UmsMemberEntity umsMemberEntity = new UmsMemberEntity();
+    umsMemberEntity.setNickname("张三");
+
+    R r = couponFeignService.memberCoupons();
+    return R.ok().put("member", umsMemberEntity).put("coupons", r.get("coupons"));
+  }
 
   /**
    * 列表

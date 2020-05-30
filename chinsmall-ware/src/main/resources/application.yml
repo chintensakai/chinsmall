@@ -1,4 +1,9 @@
+server:
+  port: 5000
+
 spring:
+  application:
+    name: chinsmall-ware
   datasource:
     #    type: com.alibaba.druid.pool.DruidDataSource
     #MySQL配置
@@ -6,6 +11,12 @@ spring:
     url: jdbc:mysql://localhost:3306/chinsmall-wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
+
+  ## nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 mybatis-plus:
   mapperLocations: classpath:mapper/**/*.xml

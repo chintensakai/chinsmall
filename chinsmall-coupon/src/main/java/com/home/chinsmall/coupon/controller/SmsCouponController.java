@@ -7,6 +7,7 @@ import com.home.common.utils.R;
 import java.util.Arrays;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,17 @@ public class SmsCouponController {
 
   @Autowired
   private SmsCouponService smsCouponService;
+
+  /***
+   * 会员所有的优惠券
+   * @return
+   */
+  @GetMapping("/member/list")
+  public R memberCoupons() {
+    SmsCouponEntity smsCouponEntity = new SmsCouponEntity();
+    smsCouponEntity.setCouponName("满100减20");
+    return R.ok().put("coupons", Arrays.asList(smsCouponEntity));
+  }
 
   /**
    * 列表
