@@ -321,7 +321,7 @@
     <remote-passwd>123456</remote-passwd>
     <remote-username>root</remote-username>
     <service-path>/work/renren</service-path>
-    <shiro.version>1.4.0</shiro.version>
+    <shiro.version>1.5.3</shiro.version>
     <swagger.version>2.7.0</swagger.version>
   </properties>
 
