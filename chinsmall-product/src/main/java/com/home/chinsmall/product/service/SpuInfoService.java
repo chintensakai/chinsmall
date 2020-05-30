@@ -1,9 +1,8 @@
 package com.home.chinsmall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.home.common.utils.PageUtils;
 import com.home.chinsmall.product.entity.SpuInfoEntity;
-
+import com.home.common.utils.PageUtils;
 import java.util.Map;
 
 /**
@@ -15,6 +14,6 @@ import java.util.Map;
  */
 public interface SpuInfoService extends IService<SpuInfoEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+  PageUtils queryPage(Map<String, Object> params);
 }
 

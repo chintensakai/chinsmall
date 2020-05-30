@@ -1,9 +1,8 @@
 package com.home.chinsmall.coupon.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.home.common.utils.PageUtils;
 import com.home.chinsmall.coupon.entity.SmsCouponSpuCategoryRelationEntity;
-
+import com.home.common.utils.PageUtils;
 import java.util.Map;
 
 /**
@@ -13,8 +12,9 @@ import java.util.Map;
  * @email chins@gmail.com
  * @date 2020-05-29 23:15:51
  */
-public interface SmsCouponSpuCategoryRelationService extends IService<SmsCouponSpuCategoryRelationEntity> {
+public interface SmsCouponSpuCategoryRelationService extends
+    IService<SmsCouponSpuCategoryRelationEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+  PageUtils queryPage(Map<String, Object> params);
 }
 

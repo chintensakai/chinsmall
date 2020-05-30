@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -23,35 +23,36 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 //@DataSource("slave1")
 public class DynamicDataSourceTestService {
-    @Autowired
-    private SysUserDao sysUserDao;
 
-    @Transactional
-    public void updateUser(Long id){
-        SysUserEntity user = new SysUserEntity();
-        user.setUserId(id);
-        user.setMobile("13500000000");
-        sysUserDao.updateById(user);
-    }
+  @Autowired
+  private SysUserDao sysUserDao;
 
-    @Transactional
-    @DataSource("slave1")
-    public void updateUserBySlave1(Long id){
-        SysUserEntity user = new SysUserEntity();
-        user.setUserId(id);
-        user.setMobile("13500000001");
-        sysUserDao.updateById(user);
-    }
+  @Transactional
+  public void updateUser(Long id) {
+    SysUserEntity user = new SysUserEntity();
+    user.setUserId(id);
+    user.setMobile("13500000000");
+    sysUserDao.updateById(user);
+  }
 
-    @DataSource("slave2")
-    @Transactional
-    public void updateUserBySlave2(Long id){
-        SysUserEntity user = new SysUserEntity();
-        user.setUserId(id);
-        user.setMobile("13500000002");
-        sysUserDao.updateById(user);
+  @Transactional
+  @DataSource("slave1")
+  public void updateUserBySlave1(Long id) {
+    SysUserEntity user = new SysUserEntity();
+    user.setUserId(id);
+    user.setMobile("13500000001");
+    sysUserDao.updateById(user);
+  }
 
-        //测试事物
-        int i = 1/0;
-    }
+  @DataSource("slave2")
+  @Transactional
+  public void updateUserBySlave2(Long id) {
+    SysUserEntity user = new SysUserEntity();
+    user.setUserId(id);
+    user.setMobile("13500000002");
+    sysUserDao.updateById(user);
+
+    //测试事物
+    int i = 1 / 0;
+  }
 }

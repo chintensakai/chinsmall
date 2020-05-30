@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.home.chinsmall.product.dao.CategoryDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.home.chinsmall.product.entity.CategoryEntity" id="categoryMap">
-        <result property="catId" column="cat_id"/>
-        <result property="name" column="name"/>
-        <result property="parentCid" column="parent_cid"/>
-        <result property="catLevel" column="cat_level"/>
-        <result property="showStatus" column="show_status"/>
-        <result property="sort" column="sort"/>
-        <result property="icon" column="icon"/>
-        <result property="productUnit" column="product_unit"/>
-        <result property="productCount" column="product_count"/>
-    </resultMap>
+  <!-- 可根据自己的需求，是否要使用 -->
+  <resultMap id="categoryMap" type="com.home.chinsmall.product.entity.CategoryEntity">
+    <result column="cat_id" property="catId"/>
+    <result column="name" property="name"/>
+    <result column="parent_cid" property="parentCid"/>
+    <result column="cat_level" property="catLevel"/>
+    <result column="show_status" property="showStatus"/>
+    <result column="sort" property="sort"/>
+    <result column="icon" property="icon"/>
+    <result column="product_unit" property="productUnit"/>
+    <result column="product_count" property="productCount"/>
+  </resultMap>
 
 
 </mapper>

@@ -1,9 +1,8 @@
 package com.home.chinsmall.member.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.home.common.utils.PageUtils;
 import com.home.chinsmall.member.entity.UmsMemberEntity;
-
+import com.home.common.utils.PageUtils;
 import java.util.Map;
 
 /**
@@ -15,6 +14,6 @@ import java.util.Map;
  */
 public interface UmsMemberService extends IService<UmsMemberEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+  PageUtils queryPage(Map<String, Object> params);
 }
 

@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.home.chinsmall.product.dao")
 public class ChinsmallProductApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ChinsmallProductApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(ChinsmallProductApplication.class, args);
+  }
 
 }

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.home.chinsmall.product.dao.AttrAttrgroupRelationDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.home.chinsmall.product.entity.AttrAttrgroupRelationEntity" id="attrAttrgroupRelationMap">
-        <result property="id" column="id"/>
-        <result property="attrId" column="attr_id"/>
-        <result property="attrGroupId" column="attr_group_id"/>
-        <result property="attrSort" column="attr_sort"/>
-    </resultMap>
+  <!-- 可根据自己的需求，是否要使用 -->
+  <resultMap id="attrAttrgroupRelationMap"
+    type="com.home.chinsmall.product.entity.AttrAttrgroupRelationEntity">
+    <result column="id" property="id"/>
+    <result column="attr_id" property="attrId"/>
+    <result column="attr_group_id" property="attrGroupId"/>
+    <result column="attr_sort" property="attrSort"/>
+  </resultMap>
 
 
 </mapper>

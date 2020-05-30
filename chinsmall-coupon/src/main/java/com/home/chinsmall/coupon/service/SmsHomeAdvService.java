@@ -1,9 +1,8 @@
 package com.home.chinsmall.coupon.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.home.common.utils.PageUtils;
 import com.home.chinsmall.coupon.entity.SmsHomeAdvEntity;
-
+import com.home.common.utils.PageUtils;
 import java.util.Map;
 
 /**
@@ -15,6 +14,6 @@ import java.util.Map;
  */
 public interface SmsHomeAdvService extends IService<SmsHomeAdvEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+  PageUtils queryPage(Map<String, Object> params);
 }
 

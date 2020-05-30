@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.home.chinsmall.product.dao.AttrDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.home.chinsmall.product.entity.AttrEntity" id="attrMap">
-        <result property="attrId" column="attr_id"/>
-        <result property="attrName" column="attr_name"/>
-        <result property="searchType" column="search_type"/>
-        <result property="icon" column="icon"/>
-        <result property="valueSelect" column="value_select"/>
-        <result property="attrType" column="attr_type"/>
-        <result property="enable" column="enable"/>
-        <result property="catelogId" column="catelog_id"/>
-        <result property="showDesc" column="show_desc"/>
-    </resultMap>
+  <!-- 可根据自己的需求，是否要使用 -->
+  <resultMap id="attrMap" type="com.home.chinsmall.product.entity.AttrEntity">
+    <result column="attr_id" property="attrId"/>
+    <result column="attr_name" property="attrName"/>
+    <result column="search_type" property="searchType"/>
+    <result column="icon" property="icon"/>
+    <result column="value_select" property="valueSelect"/>
+    <result column="attr_type" property="attrType"/>
+    <result column="enable" property="enable"/>
+    <result column="catelog_id" property="catelogId"/>
+    <result column="show_desc" property="showDesc"/>
+  </resultMap>
 
 
 </mapper>

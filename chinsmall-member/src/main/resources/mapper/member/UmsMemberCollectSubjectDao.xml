@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.home.chinsmall.member.dao.UmsMemberCollectSubjectDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.home.chinsmall.member.entity.UmsMemberCollectSubjectEntity" id="umsMemberCollectSubjectMap">
-        <result property="id" column="id"/>
-        <result property="subjectId" column="subject_id"/>
-        <result property="subjectName" column="subject_name"/>
-        <result property="subjectImg" column="subject_img"/>
-        <result property="subjectUrll" column="subject_urll"/>
-    </resultMap>
+  <!-- 可根据自己的需求，是否要使用 -->
+  <resultMap id="umsMemberCollectSubjectMap"
+    type="com.home.chinsmall.member.entity.UmsMemberCollectSubjectEntity">
+    <result column="id" property="id"/>
+    <result column="subject_id" property="subjectId"/>
+    <result column="subject_name" property="subjectName"/>
+    <result column="subject_img" property="subjectImg"/>
+    <result column="subject_urll" property="subjectUrll"/>
+  </resultMap>
 
 
 </mapper>

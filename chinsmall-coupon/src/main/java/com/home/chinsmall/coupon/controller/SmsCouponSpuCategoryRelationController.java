@@ -1,20 +1,17 @@
 package com.home.chinsmall.coupon.controller;
 
+import com.home.chinsmall.coupon.entity.SmsCouponSpuCategoryRelationEntity;
+import com.home.chinsmall.coupon.service.SmsCouponSpuCategoryRelationService;
+import com.home.common.utils.PageUtils;
+import com.home.common.utils.R;
 import java.util.Arrays;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.home.chinsmall.coupon.entity.SmsCouponSpuCategoryRelationEntity;
-import com.home.chinsmall.coupon.service.SmsCouponSpuCategoryRelationService;
-import com.home.common.utils.PageUtils;
-import com.home.common.utils.R;
-
 
 
 /**
@@ -27,63 +24,65 @@ import com.home.common.utils.R;
 @RestController
 @RequestMapping("coupon/smscouponspucategoryrelation")
 public class SmsCouponSpuCategoryRelationController {
-    @Autowired
-    private SmsCouponSpuCategoryRelationService smsCouponSpuCategoryRelationService;
 
-    /**
-     * 列表
-     */
-    @RequestMapping("/list")
-    // @RequiresPermissions("coupon:smscouponspucategoryrelation:list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = smsCouponSpuCategoryRelationService.queryPage(params);
+  @Autowired
+  private SmsCouponSpuCategoryRelationService smsCouponSpuCategoryRelationService;
 
-        return R.ok().put("page", page);
-    }
+  /**
+   * 列表
+   */
+  @RequestMapping("/list")
+  // @RequiresPermissions("coupon:smscouponspucategoryrelation:list")
+  public R list(@RequestParam Map<String, Object> params) {
+    PageUtils page = smsCouponSpuCategoryRelationService.queryPage(params);
+
+    return R.ok().put("page", page);
+  }
 
 
-    /**
-     * 信息
-     */
-    @RequestMapping("/info/{id}")
-    // @RequiresPermissions("coupon:smscouponspucategoryrelation:info")
-    public R info(@PathVariable("id") Long id){
-		SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation = smsCouponSpuCategoryRelationService.getById(id);
+  /**
+   * 信息
+   */
+  @RequestMapping("/info/{id}")
+  // @RequiresPermissions("coupon:smscouponspucategoryrelation:info")
+  public R info(@PathVariable("id") Long id) {
+    SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation = smsCouponSpuCategoryRelationService
+        .getById(id);
 
-        return R.ok().put("smsCouponSpuCategoryRelation", smsCouponSpuCategoryRelation);
-    }
+    return R.ok().put("smsCouponSpuCategoryRelation", smsCouponSpuCategoryRelation);
+  }
 
-    /**
-     * 保存
-     */
-    @RequestMapping("/save")
-    // @RequiresPermissions("coupon:smscouponspucategoryrelation:save")
-    public R save(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation){
-		smsCouponSpuCategoryRelationService.save(smsCouponSpuCategoryRelation);
+  /**
+   * 保存
+   */
+  @RequestMapping("/save")
+  // @RequiresPermissions("coupon:smscouponspucategoryrelation:save")
+  public R save(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation) {
+    smsCouponSpuCategoryRelationService.save(smsCouponSpuCategoryRelation);
 
-        return R.ok();
-    }
+    return R.ok();
+  }
 
-    /**
-     * 修改
-     */
-    @RequestMapping("/update")
-    // @RequiresPermissions("coupon:smscouponspucategoryrelation:update")
-    public R update(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation){
-		smsCouponSpuCategoryRelationService.updateById(smsCouponSpuCategoryRelation);
+  /**
+   * 修改
+   */
+  @RequestMapping("/update")
+  // @RequiresPermissions("coupon:smscouponspucategoryrelation:update")
+  public R update(@RequestBody SmsCouponSpuCategoryRelationEntity smsCouponSpuCategoryRelation) {
+    smsCouponSpuCategoryRelationService.updateById(smsCouponSpuCategoryRelation);
 
-        return R.ok();
-    }
+    return R.ok();
+  }
 
-    /**
-     * 删除
-     */
-    @RequestMapping("/delete")
-    // @RequiresPermissions("coupon:smscouponspucategoryrelation:delete")
-    public R delete(@RequestBody Long[] ids){
-		smsCouponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
+  /**
+   * 删除
+   */
+  @RequestMapping("/delete")
+  // @RequiresPermissions("coupon:smscouponspucategoryrelation:delete")
+  public R delete(@RequestBody Long[] ids) {
+    smsCouponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
 
-        return R.ok();
-    }
+    return R.ok();
+  }
 
 }

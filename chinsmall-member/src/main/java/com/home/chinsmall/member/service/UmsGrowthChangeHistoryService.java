@@ -1,9 +1,8 @@
 package com.home.chinsmall.member.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.home.common.utils.PageUtils;
 import com.home.chinsmall.member.entity.UmsGrowthChangeHistoryEntity;
-
+import com.home.common.utils.PageUtils;
 import java.util.Map;
 
 /**
@@ -15,6 +14,6 @@ import java.util.Map;
  */
 public interface UmsGrowthChangeHistoryService extends IService<UmsGrowthChangeHistoryEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+  PageUtils queryPage(Map<String, Object> params);
 }
 

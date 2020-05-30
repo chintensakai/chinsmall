@@ -11,14 +11,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class JwtTest {
-    @Autowired
-    private JwtUtils jwtUtils;
 
-    @Test
-    public void test() {
-        String token = jwtUtils.generateToken(1);
+  @Autowired
+  private JwtUtils jwtUtils;
 
-        System.out.println(token);
-    }
+  @Test
+  public void test() {
+    String token = jwtUtils.generateToken(1);
+
+    System.out.println(token);
+  }
 
 }

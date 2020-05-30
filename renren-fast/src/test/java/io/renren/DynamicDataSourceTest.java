@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -23,16 +23,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DynamicDataSourceTest {
-    @Autowired
-    private DynamicDataSourceTestService dynamicDataSourceTestService;
 
-    @Test
-    public void test(){
-        Long id = 1L;
+  @Autowired
+  private DynamicDataSourceTestService dynamicDataSourceTestService;
 
-        dynamicDataSourceTestService.updateUser(id);
-        dynamicDataSourceTestService.updateUserBySlave1(id);
-        dynamicDataSourceTestService.updateUserBySlave2(id);
-    }
+  @Test
+  public void test() {
+    Long id = 1L;
+
+    dynamicDataSourceTestService.updateUser(id);
+    dynamicDataSourceTestService.updateUserBySlave1(id);
+    dynamicDataSourceTestService.updateUserBySlave2(id);
+  }
 
 }

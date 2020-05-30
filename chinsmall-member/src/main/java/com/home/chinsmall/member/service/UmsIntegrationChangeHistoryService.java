@@ -1,9 +1,8 @@
 package com.home.chinsmall.member.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.home.common.utils.PageUtils;
 import com.home.chinsmall.member.entity.UmsIntegrationChangeHistoryEntity;
-
+import com.home.common.utils.PageUtils;
 import java.util.Map;
 
 /**
@@ -13,8 +12,9 @@ import java.util.Map;
  * @email chins@gmail.com
  * @date 2020-05-29 23:19:47
  */
-public interface UmsIntegrationChangeHistoryService extends IService<UmsIntegrationChangeHistoryEntity> {
+public interface UmsIntegrationChangeHistoryService extends
+    IService<UmsIntegrationChangeHistoryEntity> {
 
-    PageUtils queryPage(Map<String, Object> params);
+  PageUtils queryPage(Map<String, Object> params);
 }
 

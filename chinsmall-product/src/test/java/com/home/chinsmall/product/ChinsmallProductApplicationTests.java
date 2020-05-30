@@ -9,16 +9,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ChinsmallProductApplicationTests {
 
-	@Autowired
-	BrandService brandService;
+  @Autowired
+  BrandService brandService;
 
-	@Test
-	void contextLoads() {
+  @Test
+  void contextLoads() {
 
-		BrandEntity brandEntity = new BrandEntity();
-		brandEntity.setName("huawei");
-		boolean save = brandService.save(brandEntity);
-		System.out.println("--------------- " + save);
-	}
+    BrandEntity brandEntity = new BrandEntity();
+    brandEntity.setName("huawei");
+    boolean save = brandService.save(brandEntity);
+    System.out.println("--------------- " + save);
+  }
 
 }
