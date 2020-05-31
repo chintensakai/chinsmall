@@ -7,6 +7,8 @@ import com.home.common.utils.R;
 import java.util.Arrays;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,12 +24,26 @@ import org.springframework.web.bind.annotation.RestController;
  * @email chins@gmail.com
  * @date 2020-05-29 23:15:51
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/smscoupon")
 public class SmsCouponController {
 
   @Autowired
   private SmsCouponService smsCouponService;
+
+  @Value("${coupon-user.name}")
+  private String name;
+
+  @Value("${coupon-user.age}")
+  private String age;
+
+
+  @GetMapping("/test")
+  public R getPropertiesValue() {
+
+    return R.ok().put("name", name).put("age", age);
+  }
 
   /***
    * 会员所有的优惠券
