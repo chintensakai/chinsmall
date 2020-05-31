@@ -81,6 +81,11 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>com.home.chinsmall</groupId>
+      <artifactId>chinsmall-common</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
       <artifactId>spring-boot-starter-test</artifactId>
       <groupId>org.springframework.boot</groupId>
       <scope>test</scope>

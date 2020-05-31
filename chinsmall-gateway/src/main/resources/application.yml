@@ -24,3 +24,22 @@ spring:
           predicates:
             #          如果带了参数url，且参数值是qq
             - Query=url, qq
+
+
+        #           商品服务路由
+        - id: product_route
+          uri: lb://chinsmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            #            /api/product/category/list/tree -> /product/category/list/tree
+            - RewritePath=/api/(?<segment>.*), /$\{segment}
+
+        #         renren-fast后台
+        - id: admin_route
+          uri: lb://renren-fast:8080
+          predicates:
+          #            前端请求以api开头
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /renren-fast/$\{segment}

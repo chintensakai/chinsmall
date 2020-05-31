@@ -5,6 +5,7 @@ import com.home.chinsmall.product.service.CategoryService;
 import com.home.common.utils.PageUtils;
 import com.home.common.utils.R;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,14 +30,14 @@ public class CategoryController {
   private CategoryService categoryService;
 
   /**
-   * 列表
+   * 以树形结构返回分类列表
    */
-  @RequestMapping("/list")
+  @RequestMapping("/list/tree")
 //    @RequiresPermissions("product:category:list")
   public R list(@RequestParam Map<String, Object> params) {
-    PageUtils page = categoryService.queryPage(params);
+    List<CategoryEntity> list = categoryService.listWithTree();
 
-    return R.ok().put("page", page);
+    return R.ok().put("data", list);
   }
 
 
