@@ -17,5 +17,11 @@
     <result column="product_count" property="productCount"/>
   </resultMap>
 
+  <update id="logicDeleteByUpdate">
+      update pms_category set show_status = 0 where cat_id in
+      <foreach collection="list" item="itemId" index="index" open="(" close=")" separator=",">
+        #{itemId}
+      </foreach>
+  </update>
 
 </mapper>

@@ -45,6 +45,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 //    2.1 找到1级分类 - parent_id是0
     List<CategoryEntity> Level1Collect = categoryEntities.stream()
         .filter(categoryEntity -> categoryEntity.getParentCid() == 0)
+        .filter(categoryEntity -> categoryEntity.getShowStatus() != 0)
         .map(menu -> {
           menu.setChildren(getChildren(menu, categoryEntities));
           return menu;
@@ -52,6 +53,19 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         .collect(Collectors.toList());
 
     return Level1Collect;
+  }
+
+  /***
+   *
+   * @param asList
+   */
+  @Override
+  public void removeMenusByIds(List<Long> asList) {
+    // todo 检查当前删除的菜单是否被别的地方引用
+    // 这里可以用mybatis plus一系列的配置，使下面的这个方法来完成逻辑删除功能，本质上就是update语句，所以我选择自己写
+//    categoryDao.deleteBatchIds(asList);
+    categoryDao.logicDeleteByUpdate(asList);
+
   }
 
   /***
@@ -64,6 +78,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     List<CategoryEntity> collect = all.stream()
         .filter(entity -> entity.getParentCid() == root.getCatId())
+        .filter(entity -> entity.getShowStatus() != 0)
         .map(categoryEntity -> {
           categoryEntity.setChildren(getChildren(categoryEntity, all));
           return categoryEntity;
