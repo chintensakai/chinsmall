@@ -14,6 +14,7 @@
     <module>chinsmall-ware</module>
     <module>chinsmall-common</module>
     <module>chinsmall-gateway</module>
+    <module>chinsmall-search</module>
     <module>renren-fast</module>
     <module>renren-generator</module>
   </modules>
